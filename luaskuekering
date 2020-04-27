@@ -1,0 +1,102 @@
+#include <stdio.h>
+#include <string.h>
+#include "wk13.h"
+
+int main(){
+	int x = 31;
+    float t, b, hasil, s;
+    float lebar, panjang, radius, luas1, luas2, luas3;
+
+	printf("\t\t\tRAMADHAN TETAP DIRUMAH AJA YA :)\n\n");
+
+	printf("\tHari ini, hari ke-berapa Ramadhan? ");
+	scanf("%i", &x);
+	if( x<=15){
+		printf("\tSabar!!! Jangan Keluar Rumah Dulu Tetap Ibadah di Rumah:))\n");
+		}else{
+		printf("\tMasih semangat kan! Habis ini Menuju Kemenangan\n");
+		}
+
+    printf("tLailatul Qadr datang pada 10 malam ganjil terakhir bulan Ramadhan dan pada diantara tanggal berikut : ");
+    int i;
+    for (i = 1; i<=10; i++){
+        printf("%i ", i+20);
+    }
+	printf("\n\n");
+
+	printf("Dibulan Ramadhan ini, Dita membuat Kue Kering untuk persiapan lebaran.");
+	printf(" Kue Kering tersebut berbentuk bangun-bangun seperti dibawah ini beserta jumlah dan panjang sisinya.");
+	char bangun[3][20]={"Persegi Panjang","Lingkaran","Persegi"};
+	int jumlah[3]={23,25,39};
+
+	printf("\n\tKue Kering Dita yang pertama adalah %s ", bangun[0]);
+	printf("dengan jumlah %i buah.", jumlah[0]);
+	printf("\n\tKue Kering Dita yang kedua adalah %s ", bangun[1]);
+	printf("dengan jumlah %i buah.", jumlah[1]);
+	printf("\n\tKue Kering Dita yang ketiga adalah %s ", bangun[2]);
+	printf("dengan jumlah %i buah.\n\n", jumlah[2]);
+
+	int berat[3]={10,5,7};
+	printf("\n\tBerat satu Kue Kering berbentuk %s adalah %i gram." , bangun[0],berat[0]);
+	printf("\n\tBerat satu Kue Kering berbentuk %s adalah %i gram." , bangun[1],berat[1]);
+	printf("\n\tBerat satu Kue Kering berbentuk %s adalah %i gram." , bangun[2],berat[2]);
+    printf("\n\n");
+
+	int sisi[4]={2,4,7,3};
+	printf("\tPanjang sisi  dan Lebar sisi %s berturut-turut %i cm dan %i cm.\n", bangun[0], sisi[0], sisi[1]);
+	printf("\tPanjang jari-jari %s adalah %i cm .\n", bangun[1], sisi[2]);
+	printf("\tPanjang sisi %s adalah %i cm .\n", bangun[2], sisi[3]);
+
+    printf("\n\nDari data diatas, Jawablah pertanyaan dibawah ini!\n\n");
+    printf("1. Berapakah berat total Kue Kering Dita yang berbentuk %s ?\n", bangun[0]);
+    printf("\tTotal banyaknya Kue Kering berbentuk %s : ", bangun[0]);
+    scanf("%f",&t);
+    printf("\tBerat satu Kue Kering berbentuk %s : ", bangun[0]);
+    scanf("%f",&b);
+   
+    hasil=beratKueKering(t,b);
+    printf("   Maka, berat totalnya seberat %0.f gram\n", hasil);
+
+    printf("\n2. Berapakah berat total Kue Kering Dita yang berbentuk %s ?\n", bangun[1]);
+    printf("\tTotal banyaknya Kue Kering berbentuk %s : ", bangun[1]);
+    scanf("%f",&t);
+    printf("\tBerat satu Kue Kering berbentuk %s : ", bangun[1]);
+    scanf("%f",&b);
+    
+    hasil=beratKueKering(t,b);
+    printf("   Maka, berat totalnya seberat %0.f gram\n", hasil);
+
+    printf("\n3. Berapakah berat total Kue Kering Dita yang berbentuk %s ?\n", bangun[2]);
+    printf("\tTotal banyaknya Kue Kering berbentuk %s : ", bangun[2]);
+    scanf("%f",&t);
+    printf("\tBerat satu Kue Kering berbentuk %s : ", bangun[2]);
+    scanf("%f",&b);
+   
+    hasil=beratKueKering(t,b);
+    printf("   Maka, berat totalnya seberat %0.f gram\n", hasil);
+
+    printf("\n4. Berapakah luas Kue Kering Dita yang berbentuk %s ?\n", bangun[0]);
+    printf("\tMasukkan panjang : ");
+    scanf("%f",&panjang);
+    printf("\tMasukkan lebar : ");
+    scanf("%f",&lebar);
+     
+    luas1=luaspersegipanjang(panjang,lebar);
+    printf("   Maka, luasnya adalah %.2f satuan persegi\n", luas1);
+
+    printf("\n5. Berapakah luas Kue Kering Dita yang berbentuk %s ?\n", bangun[1]);
+    printf("\tMasukkan jari-jari : ");
+    scanf("%f",&radius);
+     
+    luas2=luaslingkaran(radius);
+    printf("   Maka, luasnya adalah %0.f satuan persegi\n", luas2);
+
+    printf("\n6. Berapakah luas Kue Kering Dita yang berbentuk %s ?\n", bangun[2]);
+    printf("\tMasukkan panjang : ");
+    scanf("%f",&panjang);
+    
+    luas3=luaspersegi(panjang);
+    printf("   Maka, luasnya adalah %.2f satuan persegi\n", luas3);
+
+	return 0;
+}
